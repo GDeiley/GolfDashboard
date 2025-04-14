@@ -14,10 +14,6 @@ export default function Dashboard() {
         <div className="max-w-md w-full p-6 bg-white rounded-lg shadow-lg">
           <GolfOuting onDateSelected={addGolfDate} />
         </div>
-
-        <div className="w-full max-w-md">
-          <GolfMonthCalendar /> {/* 👈 Add calendar here */}
-        </div>
       </div>
     </div>
   );
