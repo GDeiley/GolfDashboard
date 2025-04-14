@@ -1,0 +1,156 @@
+/* Container for the navbar */
+.navbar-container {
+    padding: 1rem;
+    border-bottom: 2px solid #e0e0e0;
+    background-color: #f7f9fc;
+}
+
+/* The navbar layout */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Title styling */
+.navbar-title {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+}
+
+.navbar-title:hover {
+    color: #1e90ff;
+}
+
+/* Navigation link container */
+.nav-links {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 2rem;
+}
+
+/* Link styling */
+.nav-links a {
+    text-decoration: none;
+    color: #2c3e50;
+    font-weight: 500;
+    font-size: 1.1rem;
+    position: relative;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover effect on links */
+.nav-links a:hover {
+    color: #1e90ff;
+    transform: translateY(-2px);
+    /* Slight lift effect */
+}
+
+/* Active link indicator (useful if you'd like to highlight current page) */
+.nav-links a.active {
+    color: #1e90ff;
+    font-weight: bold;
+}
+
+/* Underline effect on hover */
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: #1e90ff;
+    bottom: -5px;
+    left: 0;
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* Optional: Add a little shadow to the navbar for depth */
+.navbar-container {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive design tweaks */
+@media (max-width: 768px) {
+    .nav-links {
+        gap: 1rem;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* === Custom GolfCalendar Styles === */
+
+.cool-golf-button {
+    background: linear-gradient(135deg, #3b82f6, #1e40af);
+    /* Tailwind blue-500 to blue-900 */
+    color: white;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 500;
+    border-radius: 9999px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    transition: all 0.25s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.cool-golf-button:hover {
+    transform: scale(1.05);
+    background: linear-gradient(135deg, #2563eb, #1e3a8a);
+    /* slightly deeper blues */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.cool-golf-button:active {
+    transform: scale(0.97);
+}
+
+.react-calendar {
+    border: none;
+    border-radius: 1rem;
+    font-family: 'Inter', sans-serif;
+    background-color: white;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+}
+
+.react-calendar__tile {
+    padding: 0.75rem 0;
+    font-weight: 500;
+    border-radius: 0.5rem;
+    transition: background 0.2s ease;
+}
+
+.react-calendar__tile:enabled:hover,
+.react-calendar__tile:enabled:focus {
+    background: #3b82f6;
+    color: white;
+}
+
+.react-calendar__tile--now {
+    background: #dbeafe;
+    color: #1d4ed8;
+    border-radius: 0.5rem;
+}
+
+.golf-day {
+    background-color: #34d399 !important;
+    /* Tailwind's emerald-400 */
+    color: white !important;
+    border-radius: 8px;
+    font-weight: bold;
+}
