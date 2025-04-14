@@ -5,7 +5,7 @@ import 'react-calendar/dist/Calendar.css';
 import '@/app/styles/globals.css';
 import { useState } from 'react';
 
-function GolfCalendar({ onDateSelected }) {
+function DatePicker({ onDateSelected }) {
     const [showCalendar, setShowCalendar] = useState(false);
 
     const handleDateChange = (selectedDate) => {
@@ -33,4 +33,4 @@ function GolfCalendar({ onDateSelected }) {
     );
 }
 
-export default GolfCalendar;
+export default DatePicker;
