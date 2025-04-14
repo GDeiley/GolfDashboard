@@ -6,7 +6,7 @@ import Navbar from "@/components/ui/navbar"
 export default function Page() {
     return (
         <div>
-            <Navbar title="Coure Ratings" />
+            <Navbar title="Coure Ratingsss" />
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 p-6">
                 <Course_Ratings />
             </div>
