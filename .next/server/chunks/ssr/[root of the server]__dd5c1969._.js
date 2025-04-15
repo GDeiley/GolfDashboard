@@ -167,48 +167,119 @@ __turbopack_context__.s({
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react-jsx-dev-runtime.js [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$calendar$2f$dist$2f$esm$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__ = __turbopack_context__.i("[project]/node_modules/react-calendar/dist/esm/index.js [app-ssr] (ecmascript) <locals>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react.js [app-ssr] (ecmascript)");
+(()=>{
+    const e = new Error("Cannot find module '@/utils/supabase'");
+    e.code = 'MODULE_NOT_FOUND';
+    throw e;
+})();
 'use client';
 ;
 ;
 ;
 ;
 ;
-function DatePicker({ onDateSelected }) {
-    const [showCalendar, setShowCalendar] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
+;
+function DatePicker() {
+    const [showForm, setShowForm] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
+    const [date, setDate] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(new Date());
+    const [courseName, setCourseName] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])('');
+    const [score, setScore] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])('');
+    const [coursePar, setCoursePar] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])('');
     const handleDateChange = (selectedDate)=>{
-        onDateSelected(selectedDate); // Send date to Supabase
-        setShowCalendar(false); // Hide calendar after selecting
+        setDate(selectedDate);
+    };
+    const handleSubmit = async ()=>{
+        if (!courseName || !score || !coursePar) {
+            alert('Please fill out all fields');
+            return;
+        }
+        await addGolfOuting({
+            played_on: date,
+            course_name: courseName,
+            score: parseInt(score, 10),
+            course_par: parseInt(coursePar, 10)
+        });
+        // Reset fields
+        setCourseName('');
+        setScore('');
+        setCoursePar('');
+        setShowForm(false);
     };
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
         className: "relative text-center",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                 className: "cool-golf-button",
-                onClick: ()=>setShowCalendar(!showCalendar),
+                onClick: ()=>setShowForm(!showForm),
                 children: "Add Golf Outing"
             }, void 0, false, {
                 fileName: "[project]/src/components/ui/datepicker.jsx",
-                lineNumber: 18,
+                lineNumber: 42,
                 columnNumber: 13
             }, this),
-            showCalendar && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "absolute top-14 left-1/2 transform -translate-x-1/2 z-50 bg-white rounded-xl shadow-xl p-4",
-                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$calendar$2f$dist$2f$esm$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__["default"], {
-                    onChange: handleDateChange
-                }, void 0, false, {
-                    fileName: "[project]/src/components/ui/datepicker.jsx",
-                    lineNumber: 27,
-                    columnNumber: 21
-                }, this)
-            }, void 0, false, {
+            showForm && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "absolute top-14 left-1/2 transform -translate-x-1/2 z-50 bg-white rounded-xl shadow-xl p-6 w-80 space-y-4",
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$calendar$2f$dist$2f$esm$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__["default"], {
+                        onChange: handleDateChange,
+                        value: date
+                    }, void 0, false, {
+                        fileName: "[project]/src/components/ui/datepicker.jsx",
+                        lineNumber: 51,
+                        columnNumber: 21
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
+                        type: "text",
+                        placeholder: "Course Name",
+                        value: courseName,
+                        onChange: (e)=>setCourseName(e.target.value),
+                        className: "w-full border rounded p-2"
+                    }, void 0, false, {
+                        fileName: "[project]/src/components/ui/datepicker.jsx",
+                        lineNumber: 53,
+                        columnNumber: 21
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
+                        type: "number",
+                        placeholder: "Score",
+                        value: score,
+                        onChange: (e)=>setScore(e.target.value),
+                        className: "w-full border rounded p-2"
+                    }, void 0, false, {
+                        fileName: "[project]/src/components/ui/datepicker.jsx",
+                        lineNumber: 61,
+                        columnNumber: 21
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
+                        type: "number",
+                        placeholder: "Course Par",
+                        value: coursePar,
+                        onChange: (e)=>setCoursePar(e.target.value),
+                        className: "w-full border rounded p-2"
+                    }, void 0, false, {
+                        fileName: "[project]/src/components/ui/datepicker.jsx",
+                        lineNumber: 69,
+                        columnNumber: 21
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                        className: "bg-green-600 text-white w-full py-2 rounded hover:bg-green-700",
+                        onClick: handleSubmit,
+                        children: "Submit"
+                    }, void 0, false, {
+                        fileName: "[project]/src/components/ui/datepicker.jsx",
+                        lineNumber: 77,
+                        columnNumber: 21
+                    }, this)
+                ]
+            }, void 0, true, {
                 fileName: "[project]/src/components/ui/datepicker.jsx",
-                lineNumber: 26,
+                lineNumber: 50,
                 columnNumber: 17
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/components/ui/datepicker.jsx",
-        lineNumber: 17,
+        lineNumber: 41,
         columnNumber: 9
     }, this);
 }
@@ -268,19 +339,25 @@ module.exports = mod;
 var { g: global, __dirname } = __turbopack_context__;
 {
 __turbopack_context__.s({
-    "addGolfDate": (()=>addGolfDate)
+    "addGolfOuting": (()=>addGolfOuting)
 });
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$supabase$2f$supabase$2d$js$2f$dist$2f$module$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__ = __turbopack_context__.i("[project]/node_modules/@supabase/supabase-js/dist/module/index.js [app-ssr] (ecmascript) <locals>");
 ;
 const supabase = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$supabase$2f$supabase$2d$js$2f$dist$2f$module$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__["createClient"])(("TURBOPACK compile-time value", "https://fctclgotqitpahnvbgyn.supabase.co"), ("TURBOPACK compile-time value", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZjdGNsZ290cWl0cGFobnZiZ3luIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDQ1NzMzNzcsImV4cCI6MjA2MDE0OTM3N30.X3_AQ9eM5Kc9uJS-W3vxr7RPW6jufCcN-w3yGdnR1yk"));
-async function addGolfDate(date) {
-    const { error } = await supabase.from('golf_sessions').insert([
+async function addGolfOuting({ played_on, course_name, score, course_par }) {
+    const { error } = await supabase.from('golf_outings').insert([
         {
-            date_played: date.toISOString().split('T')[0]
-        } // format as YYYY-MM-DD
+            played_on: played_on.toISOString().split('T')[0],
+            course_name,
+            score,
+            course_par
+        }
     ]);
-    if (error) console.error('Error inserting date:', error);
-    else console.log('Date inserted successfully!');
+    if (error) {
+        console.error('Error inserting outing:', error);
+    } else {
+        console.log('Outing inserted successfully!');
+    }
 }
 }}),
 "[project]/src/app/page.jsx [app-ssr] (ecmascript)": ((__turbopack_context__) => {
@@ -315,7 +392,7 @@ function Dashboard() {
                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                     className: "max-w-md w-full p-6 bg-white rounded-lg shadow-lg",
                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$datepicker$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
-                        onDateSelected: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$senddate$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["addGolfDate"]
+                        onDateSelected: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$senddate$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["addGolfOuting"]
                     }, void 0, false, {
                         fileName: "[project]/src/app/page.jsx",
                         lineNumber: 14,

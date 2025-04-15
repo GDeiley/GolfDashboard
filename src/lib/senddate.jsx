@@ -1,14 +1,25 @@
 import { createClient } from '@supabase/supabase-js';
 
-const supabase = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL, process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY);
+const supabase = createClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL,
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
+);
 
-export async function addGolfDate(date) {
+export async function addGolfOuting({ played_on, course_name, score, course_par }) {
     const { error } = await supabase
-        .from('golf_sessions')
+        .from('golf_outings')
         .insert([
-            { date_played: date.toISOString().split('T')[0] } // format as YYYY-MM-DD
+            {
+                played_on: played_on.toISOString().split('T')[0], // format as YYYY-MM-DD
+                course_name,
+                score,
+                course_par
+            }
         ]);
 
-    if (error) console.error('Error inserting date:', error);
-    else console.log('Date inserted successfully!');
+    if (error) {
+        console.error('Error inserting outing:', error);
+    } else {
+        console.log('Outing inserted successfully!');
+    }
 }

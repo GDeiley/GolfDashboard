@@ -2,16 +2,16 @@
 
 import Navbar from "@/components/ui/navbar";
 import DatePicker from "@/components/ui/datepicker";
-import { addGolfDate } from "@/lib/senddate";
+import { addGolfOuting } from "@/lib/senddate";
 
 export default function Dashboard() {
   return (
     <div>
-      <Navbar title="Dashboard" />
+      <Navbar title="Dashboards" />
 
       <div className="flex flex-col items-center justify-center min-h-screen bg-gray-50 gap-6 p-6">
         <div className="max-w-md w-full p-6 bg-white rounded-lg shadow-lg">
-          <DatePicker onDateSelected={addGolfDate} />
+          <DatePicker onDateSelected={addGolfOuting} />
         </div>
       </div>
     </div>

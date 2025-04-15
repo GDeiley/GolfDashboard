@@ -1,3 +1,8 @@
 {
-  "/page": "app/page.js"
+  "/clubs/page": "app/clubs/page.js",
+  "/course_ratings/page": "app/course_ratings/page.js",
+  "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/handicap/page": "app/handicap/page.js",
+  "/page": "app/page.js",
+  "/recent_rounds/page": "app/recent_rounds/page.js"
 }
