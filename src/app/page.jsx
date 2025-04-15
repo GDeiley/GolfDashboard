@@ -7,7 +7,7 @@ import { addGolfOuting } from "@/lib/senddate";
 export default function Dashboard() {
   return (
     <div>
-      <Navbar title="Dashboard Page" />
+      <Navbar title="Dashboard Pagesss" />
 
       <div className="flex flex-col items-center justify-center min-h-screen bg-gray-50 gap-6 p-6">
         <div className="max-w-md w-full p-6 bg-white rounded-lg shadow-lg">
