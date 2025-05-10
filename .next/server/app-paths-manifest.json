@@ -1,6 +1,7 @@
 {
   "/clubs/page": "app/clubs/page.js",
   "/course_ratings/page": "app/course_ratings/page.js",
+  "/dashboard/page": "app/dashboard/page.js",
   "/favicon.ico/route": "app/favicon.ico/route.js",
   "/handicap/page": "app/handicap/page.js",
   "/page": "app/page.js",

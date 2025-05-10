@@ -10,7 +10,7 @@ export default function Navbar({ title }) {
                 {/* Navigation */}
                 <nav>
                     <ul className="nav-links">
-                        <li><Link href="/">Dashboard</Link></li>
+                        <li><Link href="/dashboard">Dashboard</Link></li>
                         <li><Link href="/clubs">Clubs</Link></li>
                         <li><Link href="/course_ratings">Course Ratings</Link></li>
                         <li><Link href="/handicap">Handicap</Link></li>

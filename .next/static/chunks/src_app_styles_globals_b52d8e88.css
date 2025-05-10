@@ -1,4 +1,10 @@
 /* [project]/src/app/styles/globals.css [app-client] (css) */
+html, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .navbar-container {
   padding: 1rem;
   border-bottom: 2px solid #e0e0e0;
@@ -137,6 +143,255 @@
   font-weight: bold;
   background-color: #34d399 !important;
   color: #fff !important;
+}
+
+.bg-golf-bag-light {
+  background-color: #f0f8ea;
+}
+
+.golf-input {
+  display: block;
+  width: 100%;
+  padding: .75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: .5rem;
+  transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+  box-shadow: inset 0 1px 2px #00000013;
+}
+
+.golf-input:focus {
+  color: #495057;
+  background-color: #fff;
+  border-color: #28a745;
+  outline: 0;
+  box-shadow: 0 0 0 .2rem #28a74540;
+}
+
+.text-golf-green {
+  color: #28a745;
+}
+
+.bg-gradient-golfbag {
+  background-image: linear-gradient(to bottom right, #a8dadc, #457b9d);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 3rem 1rem;
+}
+
+.golfbag-container {
+  background-color: #fff;
+  border-radius: 1.25rem;
+  box-shadow: 0 6px 20px #0000001a;
+  padding: 2.5rem;
+  width: 100%;
+  max-width: 780px;
+  transition: all .3s ease-in-out;
+}
+
+.golfbag-title {
+  color: #1d3557;
+  font-size: 2.25rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 2rem;
+  letter-spacing: .5px;
+}
+
+.golfbag-club-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 1.5rem;
+}
+
+.golfbag-club-item {
+  background-color: #f8f9fa;
+  border-radius: 1rem;
+  box-shadow: 0 4px 10px #00000012;
+  padding: 1.25rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  border-left: 6px solid #457b9d;
+  transition: transform .2s ease-in-out;
+}
+
+.golfbag-club-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 14px #0000001f;
+}
+
+.golfbag-club-name {
+  color: #1d3557;
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.golfbag-club-details {
+  color: #495057;
+  font-size: 1rem;
+}
+
+.golfbag-club-notes {
+  color: #2f3e46;
+  font-size: .95rem;
+  font-style: italic;
+  border-top: 1px dashed #ced4da;
+  padding-top: .75rem;
+  margin-top: .75rem;
+}
+
+.golfbag-empty-message {
+  color: #6c757d;
+  font-size: 1.2rem;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.golfbag-loading, .golfbag-error {
+  font-size: 1.4rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.golfbag-loading {
+  color: #1d4ed8;
+}
+
+.golfbag-error {
+  color: #dc3545;
+}
+
+.course-ratings-container {
+  padding: 20px;
+}
+
+.course-ratings-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.course-card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px #0000004d;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.course-name {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.star-rating {
+  display: flex;
+  align-items: center;
+}
+
+.star-icon {
+  color: #ffc107;
+  fill: #ffc107;
+  height: 20px;
+  width: 20px;
+  margin-right: 5px;
+}
+
+.empty-star-icon {
+  color: #ccc;
+  height: 20px;
+  width: 20px;
+  margin-right: 5px;
+}
+
+.no-ratings-message {
+  color: #777;
+  font-style: italic;
+}
+
+.handicap-graph-container {
+  padding: 20px;
+}
+
+.handicap-graph {
+}
+
+.handicap-graph-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.handicap-no-data {
+  color: #777;
+  font-style: italic;
+  text-align: center;
+}
+
+.recent-rounds-container {
+  padding: 20px;
+}
+
+.recent-rounds-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #000;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.recent-rounds-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+}
+
+.recent-round-item {
+  background-color: #fff;
+  border: 1px solid #c8e6c9;
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0 1px 3px #0000000d;
+  width: 30%;
+  text-align: center;
+}
+
+.recent-round-item strong {
+  font-size: 1.1rem;
+  color: #000;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.recent-round-item p {
+  color: #000;
+  margin-bottom: 5px;
+}
+
+.no-rounds-message {
+  color: #757575;
+  font-style: italic;
+  text-align: center;
 }
 
 /*# sourceMappingURL=src_app_styles_globals_b52d8e88.css.map*/
